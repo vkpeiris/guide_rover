@@ -1,0 +1,32 @@
+# G.U.I.D.E. — Guided Urban Integrated Evacuation Rover
+
+An Arduino-based autonomous rover that detects an emergency (gas or high heat),
+sounds an alarm, searches for a guide line on the floor, follows it to the exit,
+and signals arrival.
+
+## How it works (3 stages)
+1. **Warm-up & arm** — on power-up the rover warms its gas sensor (~60s, shown by a
+   1-2-3 LED blink), then beeps to confirm it is armed.
+2. **Roam** — it drives around the room avoiding obstacles with three ultrasonic
+   sensors, while continuously watching for danger.
+3. **Evacuate** — when gas or high temperature is detected, an alarm starts, the
+   rover finds the guide line, follows it, and stops at the exit marker.
+
+## Hardware
+- Arduino Uno
+- L298N motor driver + 2 DC motors
+- 3x HC-SR04 ultrasonic sensors (front, left, right)
+- 2x TCRT5000 infrared line sensors
+- MQ-2 gas sensor
+- DHT11 temperature sensor
+- Buzzer + LED for the alarm
+- 18650 battery pack
+- 3D-printed chassis
+
+
+
+## Build / upload
+1. Install the Arduino IDE.
+2. Install libraries: **DHT sensor library** and **Adafruit Unified Sensor**.
+3. Open file, select board **Arduino Uno** and the COM port.
+4. Upload.
